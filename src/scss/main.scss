@@ -1,0 +1,38 @@
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.navList {
+  margin: 0 15px 0 15px !important;
+}
+.MuiAppBar-colorPrimary,
+.MuiButton-containedPrimary,
+.MuiAvatar-colorDefault {
+  background: linear-gradient(45deg, #fd4970 30%, #f57631 90%);
+}
+.MuiButton-label {
+  color: aliceblue;
+}
+.MuiTypography-h6 {
+  padding: 0 0 0 15px;
+}
+.home,
+.login,
+.signUp {
+  width: 100%;
+  height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.signUp_form__fields {
+  display: flex;
+  flex-direction: column;
+}
+.MuiFormControl-root {
+  margin: 10px 0 10px 0 !important;
+}
+.linkAlterColor {
+  color: #0c0c0c;
+}
