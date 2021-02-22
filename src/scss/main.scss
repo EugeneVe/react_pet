@@ -10,8 +10,12 @@ a {
 .MuiAvatar-colorDefault {
   background: linear-gradient(45deg, #fd4970 30%, #f57631 90%);
 }
+
+.alterBtnStyle {
+  margin: 0 10px 0 10px !important;
+}
 .MuiButton-label {
-  // color: aliceblue;
+  color: #fff;
 }
 .MuiTypography-h6 {
   padding: 0 0 0 15px;
