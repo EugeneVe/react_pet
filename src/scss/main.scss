@@ -3,7 +3,7 @@ a {
   color: #fff;
 }
 .navList {
-  margin: 0 15px 0 15px !important;
+  margin: 0 5px 0 5px !important;
 }
 .MuiAppBar-colorPrimary,
 .MuiButton-containedPrimary,
@@ -11,7 +11,7 @@ a {
   background: linear-gradient(45deg, #fd4970 30%, #f57631 90%);
 }
 .MuiButton-label {
-  color: aliceblue;
+  // color: aliceblue;
 }
 .MuiTypography-h6 {
   padding: 0 0 0 15px;
@@ -35,4 +35,12 @@ a {
 }
 .linkAlterColor {
   color: #0c0c0c;
+}
+main {
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px #0c0c0c25;
+}
+.txtAlterStyle {
+  margin: 20px 0 20px 0 !important;
+  padding: 0 !important;
 }
