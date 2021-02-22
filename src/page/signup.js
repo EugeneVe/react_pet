@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: "100%",
     marginTop: theme.spacing(3),
   },
   submit: {
@@ -54,7 +54,7 @@ const SignUp = () => {
                 <TextField variant="outlined" required fullWidth id="lastName" label="Last Name" name="lastName" autoComplete="lname" />
               </Grid>
               <Grid item xs={12}>
-                <TextField variant="outlined" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" />
+                <TextField variant="outlined" required fullWidth id="email" label="Email Address" name="email" placeholder="youremail@gmail.com" autoComplete="email" />
               </Grid>
               <Grid item xs={12}>
                 <TextField variant="outlined" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" />
@@ -66,7 +66,7 @@ const SignUp = () => {
             <Grid container justify="flex-end">
               <Grid item>
                 <Link to="/login" className="linkAlterColor" variant="body2">
-                  Already have an account? Login
+                  Already have an account? Log in
                 </Link>
               </Grid>
             </Grid>

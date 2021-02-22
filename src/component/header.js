@@ -28,10 +28,12 @@ const Header = () => {
                 New App
               </Typography>
               <Link to="/login" className="navList">
-                <Button>Login</Button>
+                <Button>Log in</Button>
               </Link>
               <Link to="/signup" className="navList">
-                <Button>Sign Up</Button>
+                <Button variant="contained" color="primary">
+                  Sign Up
+                </Button>
               </Link>
             </Toolbar>
           </AppBar>
