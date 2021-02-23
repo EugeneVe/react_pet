@@ -1,8 +1,8 @@
 import React from "react";
 import { Avatar, Button, CssBaseline, TextField, Grid, Box, Container, Typography } from "@material-ui/core";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import { Link } from "react-router-dom";
 import { useStyles } from "../components/usesstyles";
+import PermIdentitySharpIcon from "@material-ui/icons/PermIdentitySharp";
 
 const SignUp = () => {
   const classes = useStyles();
@@ -13,7 +13,7 @@ const SignUp = () => {
         <CssBaseline />
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
+            <PermIdentitySharpIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign up

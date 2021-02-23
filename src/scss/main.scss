@@ -24,9 +24,14 @@ a {
 .MuiTypography-h6 {
   padding: 0 0 0 15px;
 }
+.recovery_password__title {
+  margin: 0 0 20px 0 !important;
+}
+
 .home,
 .login,
-.signUp {
+.signUp,
+.password-reset {
   width: 100%;
   height: calc(100vh - 64px);
   display: flex;

@@ -1,21 +1,21 @@
 import React from "react";
 import { Avatar, Button, CssBaseline, TextField, Grid, Box, Container, Typography } from "@material-ui/core";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import LockOpenIcon from "@material-ui/icons/LockOpen";
 import { Link } from "react-router-dom";
 import { useStyles } from "../components/usesstyles";
 
-const Login = () => {
+const PassworReset = () => {
   const classes = useStyles();
 
   return (
-    <div className="login">
+    <div className="password-reset">
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
+            <LockOpenIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h5" className="recovery_password__title">
             Recover your password
           </Typography>
           <Typography component="p" variant="subtitle2">
@@ -53,4 +53,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default PassworReset;
