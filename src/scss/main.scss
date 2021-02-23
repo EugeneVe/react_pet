@@ -1,3 +1,7 @@
+// Variables
+$backgroundGradient: linear-gradient(45deg, #fd4970 30%, #f57631 90%);
+//
+
 a {
   text-decoration: none;
   color: #fff;
@@ -8,7 +12,7 @@ a {
 .MuiAppBar-colorPrimary,
 .MuiButton-containedPrimary,
 .MuiAvatar-colorDefault {
-  background: linear-gradient(45deg, #fd4970 30%, #f57631 90%);
+  background: $backgroundGradient;
 }
 
 .alterBtnStyle {
@@ -39,6 +43,10 @@ a {
 }
 .linkAlterColor {
   color: #0c0c0c;
+  &:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+  }
 }
 main {
   border-radius: 10px;
@@ -47,4 +55,8 @@ main {
 .txtAlterStyle {
   margin: 20px 0 20px 0 !important;
   padding: 0 !important;
+}
+.loginSignUpActive {
+  background: $backgroundGradient;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
