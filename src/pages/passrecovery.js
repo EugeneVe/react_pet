@@ -6,7 +6,6 @@ import { useStyles } from "../components/usesstyles";
 
 const PassworReset = () => {
   const classes = useStyles();
-
   return (
     <div className="password-reset">
       <Container component="main" maxWidth="xs">
@@ -23,7 +22,8 @@ const PassworReset = () => {
           </Typography>
           <form className={classes.form}>
             <TextField
-              inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" }}
+              inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$" }}
+              type="email"
               variant="outlined"
               margin="normal"
               required

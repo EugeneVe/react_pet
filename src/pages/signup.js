@@ -21,14 +21,15 @@ const SignUp = () => {
           <form className={classes.form}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
-                <TextField autoComplete="fname" name="firstName" variant="outlined" required fullWidth id="firstName" label="First Name" autoFocus />
+                <TextField type="text" autoComplete="fname" name="firstName" variant="outlined" required fullWidth id="firstName" label="First Name" autoFocus />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField variant="outlined" required fullWidth id="lastName" label="Last Name" name="lastName" autoComplete="lname" />
+                <TextField type="text" variant="outlined" required fullWidth id="lastName" label="Last Name" name="lastName" autoComplete="lname" />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" }}
+                  inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$" }}
+                  type="email"
                   variant="outlined"
                   required
                   fullWidth

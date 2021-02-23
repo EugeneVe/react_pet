@@ -20,7 +20,8 @@ const Login = () => {
           </Typography>
           <form className={classes.form}>
             <TextField
-              inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" }}
+              inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$" }}
+              type="email"
               variant="outlined"
               margin="normal"
               required
