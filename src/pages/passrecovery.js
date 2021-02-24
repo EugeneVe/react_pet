@@ -1,8 +1,9 @@
 import React from "react";
-import { Avatar, Button, CssBaseline, TextField, Grid, Box, Container, Typography } from "@material-ui/core";
+import { Avatar, CssBaseline, Grid, Box, Container, Typography } from "@material-ui/core";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import { Link } from "react-router-dom";
 import { useStyles } from "../components/usesstyles";
+import PasswordRecovery from "../components/passResetForm";
 
 const PassworReset = () => {
   const classes = useStyles();
@@ -20,24 +21,9 @@ const PassworReset = () => {
           <Typography component="p" variant="subtitle2">
             Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.
           </Typography>
-          <form className={classes.form}>
-            <TextField
-              inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$" }}
-              type="email"
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              placeholder="youremail@gmail.com"
-              autoComplete="email"
-              autoFocus
-            />
-            <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-              Reset password
-            </Button>
+          <div className={classes.form}>
+            <PasswordRecovery />
+            <Box mt={1}></Box>
             <Grid container>
               <Grid item>
                 <Link to="/login" className="linkAlterColor" variant="body2">
@@ -45,7 +31,7 @@ const PassworReset = () => {
                 </Link>
               </Grid>
             </Grid>
-          </form>
+          </div>
         </div>
         <Box mt={8}></Box>
       </Container>
