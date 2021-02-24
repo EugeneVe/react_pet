@@ -1,8 +1,9 @@
 import React from "react";
-import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Grid, Box, Container, Typography } from "@material-ui/core";
+import { Avatar, CssBaseline, Grid, Box, Container, Typography } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import { Link } from "react-router-dom";
 import { useStyles } from "../components/usesstyles";
+import EmailAndPassword from "../components/emailPassForm";
 
 const Login = () => {
   const classes = useStyles();
@@ -18,25 +19,8 @@ const Login = () => {
           <Typography component="h1" variant="h5">
             Log in
           </Typography>
-          <form className={classes.form}>
-            <TextField
-              inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" }}
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              placeholder="youremail@gmail.com"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField variant="outlined" margin="normal" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" />
-            <FormControlLabel className="alterButtonStyle" control={<Checkbox value="remember" color="primary" />} label="Remember me" />
-            <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-              Sign In
-            </Button>
+          <div className={classes.form}>
+            <EmailAndPassword />
             <Grid container>
               <Grid item xs>
                 <Link to="/password-recovery" className="linkAlterColor" variant="body2">
@@ -49,7 +33,7 @@ const Login = () => {
                 </Link>
               </Grid>
             </Grid>
-          </form>
+          </div>
         </div>
         <Box mt={8}></Box>
       </Container>
