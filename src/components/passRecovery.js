@@ -1,13 +1,17 @@
 import React from "react";
+import { validatePassReset } from "./validateInfo";
+import useForm from "./useForm";
 import { Avatar, Button, CssBaseline, TextField, Grid, Box, Container, Typography } from "@material-ui/core";
+import { useStyles } from "./usesstyles";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import { Link } from "react-router-dom";
-import { useStyles } from "../components/usesstyles";
 
-const PassworReset = () => {
+const PassworReset = ({ submitForm }) => {
+  const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validatePassReset);
   const classes = useStyles();
+
   return (
-    <div className="password-reset">
+    <div className="login">
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -20,23 +24,25 @@ const PassworReset = () => {
           <Typography component="p" variant="subtitle2">
             Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.
           </Typography>
-          <form className={classes.form}>
-            <TextField
-              inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$" }}
-              type="email"
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              placeholder="youremail@gmail.com"
-              autoComplete="email"
-              autoFocus
-            />
+          <form onSubmit={handleSubmit} noValidate className={classes.form}>
+            <div className="form-inputs">
+              <TextField
+                autoFocus
+                variant="outlined"
+                required
+                fullWidth
+                label="Email Address"
+                className="form-input"
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                value={values.email}
+                onChange={handleChange}
+              />
+              {errors.email && <p>{errors.email}</p>}
+            </div>
             <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-              Reset password
+              reset password
             </Button>
             <Grid container>
               <Grid item>
@@ -47,7 +53,7 @@ const PassworReset = () => {
             </Grid>
           </form>
         </div>
-        <Box mt={8}></Box>
+        <Box mt={5}></Box>
       </Container>
     </div>
   );

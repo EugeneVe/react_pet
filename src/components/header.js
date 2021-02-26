@@ -2,7 +2,7 @@ import React from "react";
 import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import { NavLink } from "react-router-dom";
-import { useStylestitle } from "../components/usesstyles";
+import { useStylestitle } from "./usesstyles";
 
 const Header = () => {
   const classes = useStylestitle();
