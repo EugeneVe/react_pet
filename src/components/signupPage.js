@@ -6,7 +6,7 @@ import { useStyles } from "./usesstyles";
 import PermIdentitySharpIcon from "@material-ui/icons/PermIdentitySharp";
 import { Link } from "react-router-dom";
 
-const FormSignup = ({ submitForm }) => {
+const SignupPage = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validateSignUp);
   const classes = useStyles();
 
@@ -20,7 +20,7 @@ const FormSignup = ({ submitForm }) => {
             <PermIdentitySharpIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            sign up
+            Sign up
           </Typography>
           <form onSubmit={handleSubmit} noValidate className={classes.form}>
             <div className="form-inputs">
@@ -104,4 +104,4 @@ const FormSignup = ({ submitForm }) => {
   );
 };
 
-export default FormSignup;
+export default SignupPage;

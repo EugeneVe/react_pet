@@ -6,7 +6,7 @@ import { useStyles } from "./usesstyles";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import { Link } from "react-router-dom";
 
-const FormSignin = ({ submitForm }) => {
+const LogInPage = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validateLogin);
   const classes = useStyles();
 
@@ -76,4 +76,4 @@ const FormSignin = ({ submitForm }) => {
   );
 };
 
-export default FormSignin;
+export default LogInPage;
