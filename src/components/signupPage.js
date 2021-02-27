@@ -37,8 +37,9 @@ const SignupPage = ({ submitForm }) => {
                 placeholder="Enter your username"
                 value={values.username}
                 onChange={handleChange}
+                error={Boolean(errors.username)}
+                helperText={errors.username}
               />
-              {errors.username && <p>{errors.username}</p>}
             </div>
 
             <div className="form-inputs">
@@ -48,13 +49,15 @@ const SignupPage = ({ submitForm }) => {
                 fullWidth
                 label="Email Address"
                 className="form-input"
+                id="email"
                 type="email"
                 name="email"
                 placeholder="Enter your email"
                 value={values.email}
                 onChange={handleChange}
+                error={Boolean(errors.email)}
+                helperText={errors.email}
               />
-              {errors.email && <p>{errors.email}</p>}
             </div>
             <div className="form-inputs">
               <TextField
@@ -68,8 +71,9 @@ const SignupPage = ({ submitForm }) => {
                 placeholder="Enter your password"
                 value={values.password}
                 onChange={handleChange}
+                error={Boolean(errors.password)}
+                helperText={errors.password}
               />
-              {errors.password && <p>{errors.password}</p>}
             </div>
             {/* <div className="form-inputs">
               <TextField
@@ -83,8 +87,9 @@ const SignupPage = ({ submitForm }) => {
                 placeholder="Confirm your password"
                 value={values.password2}
                 onChange={handleChange}
+                error={Boolean(errors.password2)}
+                helperText={errors.password2}
               />
-              {errors.password2 && <p>{errors.password2}</p>}
             </div> */}
             <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
               Sign up

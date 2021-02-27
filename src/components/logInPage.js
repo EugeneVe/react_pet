@@ -35,8 +35,9 @@ const LogInPage = ({ submitForm }) => {
                 placeholder="Enter your email"
                 value={values.email}
                 onChange={handleChange}
+                error={Boolean(errors.email)}
+                helperText={errors.email}
               />
-              {errors.email && <p>{errors.email}</p>}
             </div>
             <div className="form-inputs">
               <TextField
@@ -50,8 +51,9 @@ const LogInPage = ({ submitForm }) => {
                 placeholder="Enter your password"
                 value={values.password}
                 onChange={handleChange}
+                error={Boolean(errors.password)}
+                helperText={errors.password}
               />
-              {errors.password && <p>{errors.password}</p>}
             </div>
             <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
               sign in
