@@ -38,8 +38,9 @@ const PassworReset = ({ submitForm }) => {
                 placeholder="Enter your email"
                 value={values.email}
                 onChange={handleChange}
+                error={Boolean(errors.email)}
+                helperText={errors.email}
               />
-              {errors.email && <p>{errors.email}</p>}
             </div>
             <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
               reset password

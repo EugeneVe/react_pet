@@ -31,7 +31,7 @@ const useForm = (callback, validate) => {
     } else if (Object.keys(errors).length !== 0 && isSubmitting) {
       console.log("Nop, you have fill up all forms");
     }
-  });
+  }, [isSubmitting, errors]);
 
   return { handleChange, handleSubmit, values, errors };
 };
