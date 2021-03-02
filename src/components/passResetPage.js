@@ -1,10 +1,10 @@
 import React from "react";
-import SignUpComponent from "./signUpComponent";
+import PassworResetComponent from "./passResetComponent";
 
 const SignUpPage = () => {
   return (
     <>
-      <SignUpComponent />
+      <PassworResetComponent />
     </>
   );
 };
