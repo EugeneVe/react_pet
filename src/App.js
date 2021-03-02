@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "./components/header";
 import HomePage from "./components/homePage";
-import Signin from "./components/signInPage";
-import Signup from "./components/signUpPage";
-import PasswordReset from "./components/passResetPage";
+import Login from "./components/logInPage";
+import Signup from "./components/signupPage";
+import PasswordRecovery from "./components/passRecovery";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./scss/main.scss";
 
@@ -12,9 +12,9 @@ function App() {
     <Router>
       <Header />
       <Route path="/" exact component={HomePage} />
-      <Route path="/login" component={Signin} />
+      <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
-      <Route path="/password-recovery" component={PasswordReset} />
+      <Route path="/password-recovery" component={PasswordRecovery} />
     </Router>
   );
 }
