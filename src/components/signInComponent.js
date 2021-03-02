@@ -1,6 +1,4 @@
-import React from "react";
-import { validateLogin } from "./validateInfo";
-import useForm from "./useForm";
+import React, { useState, useEffect } from "react";
 import { Avatar, Button, CssBaseline, TextField, Grid, Box, Container, Typography } from "@material-ui/core";
 import { useStyles } from "./usesstyles";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -9,10 +7,54 @@ import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
+// import { validateLogin } from "./validateInfo";
+// import useForm from "./useForm";
 
-const LogInPage = ({ submitForm }) => {
-  const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validateLogin);
-  const classes = useStyles();
+const SignInComponent = ({ submitForm }) => {
+  // SIGN IN VALIDATION
+  const validateLogin = (values) => {
+    let errors = {};
+    if (!values.email) {
+      errors.email = "Email required";
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      errors.email = "Email address is invalid";
+    }
+    if (!values.password) {
+      errors.password = "Password is required";
+    } else if (values.password.length < 6) {
+      errors.password = "Password needs to be 6 characters or more";
+    }
+    return errors;
+  };
+  //FORM SUBMID FUNCTION
+  const useForm = (callback, validate) => {
+    const [values, setValues] = useState({
+      email: "",
+      password: "",
+    });
+    const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setValues({
+        ...values,
+        [name]: value,
+      });
+    };
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setErrors(validate(values));
+      setIsSubmitting(true);
+    };
+    useEffect(() => {
+      if (Object.keys(errors).length === 0 && isSubmitting) {
+        console.log("Wellcome to your account");
+      } else if (Object.keys(errors).length !== 0 && isSubmitting) {
+        console.log("Nop, you have fill up all forms");
+      }
+    }, [isSubmitting, errors]);
+    return { handleChange, handleSubmit, values, errors };
+  };
   // This add show hide password
   const [valueses, setValues] = React.useState({
     password: "",
@@ -21,10 +63,9 @@ const LogInPage = ({ submitForm }) => {
   const handleClickShowPassword = () => {
     setValues(Object.assign(Object.assign({}, valueses), { showPassword: !valueses.showPassword }));
   };
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-  // ! This add show hide password
+  // call functions FORM SUBMID & VALIDATION
+  const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validateLogin);
+  const classes = useStyles();
   return (
     <div className="login">
       <Container component="main" maxWidth="xs">
@@ -71,7 +112,7 @@ const LogInPage = ({ submitForm }) => {
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
-                      <IconButton aria-label="toggle password visibility" onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>
+                      <IconButton aria-label="toggle password visibility" onClick={handleClickShowPassword}>
                         {valueses.showPassword ? <Visibility /> : <VisibilityOff />}
                       </IconButton>
                     </InputAdornment>
@@ -102,4 +143,4 @@ const LogInPage = ({ submitForm }) => {
   );
 };
 
-export default LogInPage;
+export default SignInComponent;
